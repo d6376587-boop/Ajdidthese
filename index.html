@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AJDidThese</title>
+<title>AJDidThese Anime Store</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -14,90 +15,137 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#090909;
+background:#050505;
+background-image:
+radial-gradient(circle at top,#700000 0%,#050505 60%);
 color:white;
+min-height:100vh;
 }
 
 header{
-padding:80px 20px;
 text-align:center;
-background:linear-gradient(180deg,#3d0000,#090909);
+padding:100px 20px;
+background:linear-gradient(180deg,#600000,#050505);
 }
 
-h1{
+header h1{
 font-size:4rem;
 color:#ff2d2d;
+text-shadow:
+0 0 20px red,
+0 0 40px red;
 }
 
-.subtitle{
-margin-top:10px;
+header p{
+margin-top:15px;
+font-size:1.2rem;
 color:#ddd;
 }
 
-.section{
-max-width:1000px;
+.banner{
+margin-top:20px;
+font-size:1.5rem;
+color:gold;
+}
+
+.container{
+max-width:1200px;
 margin:auto;
 padding:30px 20px;
 }
 
-.card{
-background:#141414;
-border:1px solid #ff2d2d;
-border-radius:20px;
-padding:25px;
-margin-bottom:25px;
-}
-
-.card h2{
-margin-bottom:15px;
-color:#ff2d2d;
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .product{
+background:#111;
+border:2px solid #ff0000;
+border-radius:20px;
+padding:20px;
 text-align:center;
+box-shadow:0 0 20px rgba(255,0,0,.3);
+transition:.3s;
 }
 
-.old-price{
+.product:hover{
+transform:translateY(-5px);
+box-shadow:0 0 35px rgba(255,0,0,.8);
+}
+
+.product h3{
+margin-bottom:10px;
+color:#ff4444;
+}
+
+.old{
 text-decoration:line-through;
-font-size:1.2rem;
-color:#999;
+color:#888;
 }
 
-.new-price{
-font-size:2.5rem;
+.price{
+font-size:2rem;
 font-weight:bold;
 color:#00ff66;
+margin:10px 0;
 }
 
 .discount{
 color:gold;
-font-weight:bold;
 margin-bottom:15px;
 }
 
 button{
-padding:14px 28px;
+cursor:pointer;
 border:none;
 border-radius:12px;
-cursor:pointer;
-font-size:1rem;
+padding:12px 20px;
 font-weight:bold;
 }
 
 .buy{
-background:#00c853;
+background:linear-gradient(45deg,#ff0000,#990000);
 color:white;
 }
 
-.checkout{
-background:#ff2d2d;
-color:white;
-margin-top:10px;
+.buy:hover{
+transform:scale(1.05);
 }
 
 .cart{
-font-size:1.3rem;
-margin-top:10px;
+margin-top:40px;
+background:#111;
+border:2px solid #ff0000;
+padding:25px;
+border-radius:20px;
+}
+
+.cart h2{
+margin-bottom:15px;
+color:#ff4444;
+}
+
+#cartItems li{
+margin:10px 0;
+list-style:none;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.remove{
+background:#333;
+color:white;
+padding:6px 12px;
+}
+
+.checkout{
+margin-top:15px;
+background:#00c853;
+color:white;
+padding:15px 25px;
 }
 
 .modal{
@@ -107,7 +155,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.92);
+background:rgba(0,0,0,.95);
 justify-content:center;
 align-items:center;
 z-index:999;
@@ -117,19 +165,20 @@ z-index:999;
 background:#111;
 padding:25px;
 border-radius:20px;
-max-width:400px;
+max-width:420px;
 width:90%;
 text-align:center;
+border:2px solid red;
 }
 
 .modal-content img{
 width:100%;
 border-radius:15px;
+margin:15px 0;
 }
 
 .close{
 background:red;
-margin-top:15px;
 color:white;
 }
 
@@ -138,57 +187,103 @@ text-align:center;
 padding:40px;
 color:#888;
 }
+
 </style>
 </head>
+
 <body>
 
 <header>
 <h1>AJDidThese</h1>
-<p class="subtitle">
-Anime • Gaming • Community
-</p>
+<p>Anime • Gaming • Community</p>
+<div class="banner">
+🔥 ITACHI COLLECTION SALE • EVERYTHING $70 🔥
+</div>
 </header>
 
-<div class="section">
+<div class="container">
 
-<div class="card">
-<h2>Featured Anime Favorites</h2>
-<ul style="line-height:2;">
-<li>🔥 Itachi Uchiha</li>
-<li>⚡ Sasuke Uchiha</li>
-<li>🦊 Naruto Uzumaki</li>
-<li>👒 Monkey D. Luffy</li>
-<li>⚔️ Roronoa Zoro</li>
-<li>💀 Ichigo Kurosaki</li>
-</ul>
+<div class="products">
+
+<div class="product">
+<h3>Itachi Shadow Pack</h3>
+<p class="old">$100</p>
+<p class="price">$70</p>
+<p class="discount">Save $30</p>
+<button class="buy" onclick="addToCart('Itachi Shadow Pack',70)">Add To Cart</button>
 </div>
 
-<div class="card product">
-<h2>AJDidThese Exclusive</h2>
-
-<p class="discount">LIMITED TIME DISCOUNT</p>
-
-<p class="old-price">$100</p>
-
-<p class="new-price">$70</p>
-
-<p>Save $30 Today</p>
-
-<br>
-
-<button class="buy" onclick="addToCart()">
-Add To Cart
-</button>
+<div class="product">
+<h3>Itachi Akatsuki Bundle</h3>
+<p class="old">$100</p>
+<p class="price">$70</p>
+<button class="buy" onclick="addToCart('Itachi Akatsuki Bundle',70)">Add To Cart</button>
 </div>
 
-<div class="card">
-<h2>Shopping Cart</h2>
-
-<div class="cart" id="cart">
-Total: $0
+<div class="product">
+<h3>Sasuke Lightning Pack</h3>
+<p class="old">$100</p>
+<p class="price">$70</p>
+<button class="buy" onclick="addToCart('Sasuke Lightning Pack',70)">Add To Cart</button>
 </div>
 
-<br>
+<div class="product">
+<h3>Naruto Hokage Bundle</h3>
+<p class="old">$100</p>
+<p class="price">$70</p>
+<button class="buy" onclick="addToCart('Naruto Hokage Bundle',70)">Add To Cart</button>
+</div>
+
+<div class="product">
+<h3>Luffy Pirate Pack</h3>
+<p class="old">$100</p>
+<p class="price">$70</p>
+<button class="buy" onclick="addToCart('Luffy Pirate Pack',70)">Add To Cart</button>
+</div>
+
+<div class="product">
+<h3>Zoro Swordsman Bundle</h3>
+<p class="old">$100</p>
+<p class="price">$70</p>
+<button class="buy" onclick="addToCart('Zoro Swordsman Bundle',70)">Add To Cart</button>
+</div>
+
+<div class="product">
+<h3>Ichigo Reaper Pack</h3>
+<p class="old">$100</p>
+<p class="price">$70</p>
+<button class="buy" onclick="addToCart('Ichigo Reaper Pack',70)">Add To Cart</button>
+</div>
+
+<div class="product">
+<h3>Gojo Infinity Bundle</h3>
+<p class="old">$100</p>
+<p class="price">$70</p>
+<button class="buy" onclick="addToCart('Gojo Infinity Bundle',70)">Add To Cart</button>
+</div>
+
+<div class="product">
+<h3>Tanjiro Slayer Pack</h3>
+<p class="old">$100</p>
+<p class="price">$70</p>
+<button class="buy" onclick="addToCart('Tanjiro Slayer Pack',70)">Add To Cart</button>
+</div>
+
+<div class="product">
+<h3>Levi Elite Bundle</h3>
+<p class="old">$100</p>
+<p class="price">$70</p>
+<button class="buy" onclick="addToCart('Levi Elite Bundle',70)">Add To Cart</button>
+</div>
+
+</div>
+
+<div class="cart">
+<h2>🛒 Shopping Cart</h2>
+
+<ul id="cartItems"></ul>
+
+<h3 id="cartTotal">Total: $0</h3>
 
 <button class="checkout" onclick="checkout()">
 Checkout
@@ -197,20 +292,16 @@ Checkout
 
 </div>
 
-<div class="modal" id="paymentModal">
+<div id="paymentModal" class="modal">
 <div class="modal-content">
 
-<h2>Scan To Pay</h2>
+<h2>Checkout</h2>
 
-<p>
-Use Cash App and scan this QR code.
-</p>
-
-<br>
+<p>Scan with Cash App to pay.</p>
 
 <img src="cashapp.jpg" alt="Cash App QR">
 
-<p id="checkoutTotal"></p>
+<h3 id="checkoutTotal"></h3>
 
 <button class="close" onclick="closeModal()">
 Close
@@ -225,39 +316,80 @@ Close
 
 <script>
 
+let cart = [];
 let total = 0;
 
-function addToCart(){
-total += 70;
-document.getElementById("cart").innerHTML =
+function addToCart(name, price){
+
+cart.push({name,price});
+
+total += price;
+
+renderCart();
+}
+
+function renderCart(){
+
+const list =
+document.getElementById("cartItems");
+
+list.innerHTML = "";
+
+cart.forEach((item,index)=>{
+
+list.innerHTML += `
+<li>
+${item.name} - $${item.price}
+<button class="remove"
+onclick="removeItem(${index})">
+Remove
+</button>
+</li>
+`;
+
+});
+
+document.getElementById("cartTotal")
+.innerHTML =
 "Total: $" + total;
+}
+
+function removeItem(index){
+
+total -= cart[index].price;
+
+cart.splice(index,1);
+
+renderCart();
 }
 
 function checkout(){
 
-if(total === 0){
-alert("Add an item to the cart first.");
+if(cart.length===0){
+alert("Your cart is empty.");
 return;
 }
 
-document.getElementById("checkoutTotal").innerHTML =
+document.getElementById("checkoutTotal")
+.innerHTML =
 "Amount Due: $" + total;
 
-document.getElementById("paymentModal").style.display =
-"flex";
+document.getElementById("paymentModal")
+.style.display="flex";
 }
 
 function closeModal(){
-document.getElementById("paymentModal").style.display =
-"none";
+document.getElementById("paymentModal")
+.style.display="none";
 }
 
-window.onclick = function(event){
+window.onclick=function(event){
+
 const modal =
 document.getElementById("paymentModal");
 
-if(event.target === modal){
-modal.style.display = "none";
+if(event.target===modal){
+modal.style.display="none";
 }
 }
 
