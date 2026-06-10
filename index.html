@@ -3,203 +3,265 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AJ Customized Kicks</title>
+<title>AJDidThese</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    background:#0d0d0d;
-    color:white;
+background:#090909;
+color:white;
 }
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    background:#000;
-    border-bottom:2px solid #ff4500;
+header{
+padding:80px 20px;
+text-align:center;
+background:linear-gradient(180deg,#3d0000,#090909);
 }
 
-.logo{
-    font-size:2rem;
-    font-weight:bold;
-    color:#ff4500;
+h1{
+font-size:4rem;
+color:#ff2d2d;
 }
 
-.hero{
-    height:80vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-    background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-    url('https://images.unsplash.com/photo-1519861531473-9200262188bf');
-    background-size:cover;
-    background-position:center;
+.subtitle{
+margin-top:10px;
+color:#ddd;
 }
 
-.hero h1{
-    font-size:4rem;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:1.3rem;
-    color:#ccc;
-    max-width:700px;
-}
-
-.btn{
-    margin-top:25px;
-    padding:15px 35px;
-    background:#ff4500;
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:bold;
-}
-
-.products{
-    padding:60px 8%;
-}
-
-.products h2{
-    text-align:center;
-    margin-bottom:40px;
-    font-size:2.5rem;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+.section{
+max-width:1000px;
+margin:auto;
+padding:30px 20px;
 }
 
 .card{
-    background:#1a1a1a;
-    border-radius:15px;
-    overflow:hidden;
-    transition:.3s;
+background:#141414;
+border:1px solid #ff2d2d;
+border-radius:20px;
+padding:25px;
+margin-bottom:25px;
 }
 
-.card:hover{
-    transform:translateY(-8px);
+.card h2{
+margin-bottom:15px;
+color:#ff2d2d;
 }
 
-.card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
+.product{
+text-align:center;
 }
 
-.card-content{
-    padding:20px;
+.old-price{
+text-decoration:line-through;
+font-size:1.2rem;
+color:#999;
 }
 
-.price{
-    color:#ff4500;
-    font-size:1.4rem;
-    margin-top:10px;
+.new-price{
+font-size:2.5rem;
+font-weight:bold;
+color:#00ff66;
 }
 
-.payment{
-    text-align:center;
-    padding:60px 20px;
-    background:#111;
+.discount{
+color:gold;
+font-weight:bold;
+margin-bottom:15px;
 }
 
-.cashapp{
-    font-size:2rem;
-    color:#00d64f;
-    font-weight:bold;
-    margin:15px 0;
+button{
+padding:14px 28px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-size:1rem;
+font-weight:bold;
+}
+
+.buy{
+background:#00c853;
+color:white;
+}
+
+.checkout{
+background:#ff2d2d;
+color:white;
+margin-top:10px;
+}
+
+.cart{
+font-size:1.3rem;
+margin-top:10px;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.92);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.modal-content{
+background:#111;
+padding:25px;
+border-radius:20px;
+max-width:400px;
+width:90%;
+text-align:center;
+}
+
+.modal-content img{
+width:100%;
+border-radius:15px;
+}
+
+.close{
+background:red;
+margin-top:15px;
+color:white;
 }
 
 footer{
-    text-align:center;
-    padding:20px;
-    background:#000;
+text-align:center;
+padding:40px;
+color:#888;
 }
 </style>
 </head>
-
 <body>
 
-<nav>
-    <div class="logo">AJ CUSTOMIZED KICKS</div>
-</nav>
+<header>
+<h1>AJDidThese</h1>
+<p class="subtitle">
+Anime • Gaming • Community
+</p>
+</header>
 
-<section class="hero">
-    <h1>🏀 Anime Basketball Shoes</h1>
-    <p>Custom Ja Morant 3 designs inspired by your favorite anime characters.</p>
-    <a href="#shop" class="btn">Shop Now</a>
-</section>
+<div class="section">
 
-<section class="products" id="shop">
-    <h2>Featured Customs</h2>
+<div class="card">
+<h2>Featured Anime Favorites</h2>
+<ul style="line-height:2;">
+<li>🔥 Itachi Uchiha</li>
+<li>⚡ Sasuke Uchiha</li>
+<li>🦊 Naruto Uzumaki</li>
+<li>👒 Monkey D. Luffy</li>
+<li>⚔️ Roronoa Zoro</li>
+<li>💀 Ichigo Kurosaki</li>
+</ul>
+</div>
 
-    <div class="grid">
+<div class="card product">
+<h2>AJDidThese Exclusive</h2>
 
-        <div class="card">
-            <img src="YOUR_ITACHI_IMAGE.jpg">
-            <div class="card-content">
-                <h3>🔥 Itachi Ja Morant 3</h3>
-                <p>Akatsuki-inspired custom design.</p>
-                <div class="price">$180</div>
-            </div>
-        </div>
+<p class="discount">LIMITED TIME DISCOUNT</p>
 
-        <div class="card">
-            <img src="YOUR_GOJO_IMAGE.jpg">
-            <div class="card-content">
-                <h3>⚡ Gojo Ja Morant 3</h3>
-                <p>Jujutsu Kaisen inspired colorway.</p>
-                <div class="price">$180</div>
-            </div>
-        </div>
+<p class="old-price">$100</p>
 
-        <div class="card">
-            <img src="YOUR_NARUTO_IMAGE.jpg">
-            <div class="card-content">
-                <h3>🍥 Naruto Ja Morant 3</h3>
-                <p>Hidden Leaf inspired custom.</p>
-                <div class="price">$180</div>
-            </div>
-        </div>
+<p class="new-price">$70</p>
 
-        <div class="card">
-            <img src="YOUR_LUFFY_IMAGE.jpg">
-            <div class="card-content">
-                <h3>☠️ Luffy Ja Morant 3</h3>
-                <p>One Piece inspired custom.</p>
-                <div class="price">$180</div>
-            </div>
-        </div>
+<p>Save $30 Today</p>
 
-    </div>
-</section>
+<br>
 
-<section class="payment">
-    <h2>Order Now</h2>
-    <p>Send a message with your size and design request.</p>
+<button class="buy" onclick="addToCart()">
+Add To Cart
+</button>
+</div>
 
-    <div class="cashapp">$alterts</div>
+<div class="card">
+<h2>Shopping Cart</h2>
 
-    <p>Custom orders available.</p>
-</section>
+<div class="cart" id="cart">
+Total: $0
+</div>
+
+<br>
+
+<button class="checkout" onclick="checkout()">
+Checkout
+</button>
+</div>
+
+</div>
+
+<div class="modal" id="paymentModal">
+<div class="modal-content">
+
+<h2>Scan To Pay</h2>
+
+<p>
+Use Cash App and scan this QR code.
+</p>
+
+<br>
+
+<img src="cashapp.jpg" alt="Cash App QR">
+
+<p id="checkoutTotal"></p>
+
+<button class="close" onclick="closeModal()">
+Close
+</button>
+
+</div>
+</div>
 
 <footer>
-    © 2026 AJ Customized Kicks
+© 2025 AJDidThese
 </footer>
+
+<script>
+
+let total = 0;
+
+function addToCart(){
+total += 70;
+document.getElementById("cart").innerHTML =
+"Total: $" + total;
+}
+
+function checkout(){
+
+if(total === 0){
+alert("Add an item to the cart first.");
+return;
+}
+
+document.getElementById("checkoutTotal").innerHTML =
+"Amount Due: $" + total;
+
+document.getElementById("paymentModal").style.display =
+"flex";
+}
+
+function closeModal(){
+document.getElementById("paymentModal").style.display =
+"none";
+}
+
+window.onclick = function(event){
+const modal =
+document.getElementById("paymentModal");
+
+if(event.target === modal){
+modal.style.display = "none";
+}
+}
+
+</script>
 
 </body>
 </html>
