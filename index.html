@@ -754,12 +754,28 @@ alert("Your cart is empty.");
 return;
 }
 
-document.getElementById("checkoutTotal")
-.innerHTML =
+let firstName = prompt("Enter First Name:");
+if(!firstName) return;
+
+let lastName = prompt("Enter Last Name:");
+if(!lastName) return;
+
+let address = prompt("Enter Shipping Address:");
+if(!address) return;
+
+let city = prompt("Enter City:");
+if(!city) return;
+
+let state = prompt("Enter State:");
+if(!state) return;
+
+let zip = prompt("Enter ZIP Code:");
+if(!zip) return;
+
+document.getElementById("checkoutTotal").innerHTML =
 "Amount Due: $" + total;
 
-document.getElementById("paymentModal")
-.style.display="flex";
+document.getElementById("paymentModal").style.display = "flex";
 }
 
 function closeModal(){
