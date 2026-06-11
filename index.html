@@ -962,7 +962,68 @@ if(event.target===modal){
 modal.style.display="none";
 }
 }
+async function sendOrder(){
 
+let orderText = "";
+
+cart.forEach(item=>{
+orderText += `${item.name} - $${item.price}\n`;
+});
+
+const payload = {
+content:
+`🔥 NEW AJDidThese ORDER 🔥
+
+👤 Name:
+${document.getElementById("customerFirst").value}
+${document.getElementById("customerLast").value}
+
+📦 Address:
+${document.getElementById("customerAddress").value}
+
+🏙️ City:
+${document.getElementById("customerCity").value}
+
+🗺️ State:
+${document.getElementById("customerState").value}
+
+📮 ZIP:
+${document.getElementById("customerZip").value}
+
+👟 Shoe Size:
+${document.getElementById("customerSize").value}
+
+🛒 Order:
+${orderText}
+
+💰 Total:
+$${total}`
+};
+
+try{
+
+await fetch("https://discord.com/api/webhooks/1514718583001714800/s5ngxaG0QcJG0HijXtUkIf6rVpqHNLq066_JgXymQBDcRkt7CzPTh1AyprueqcX15AnB",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify(payload)
+});
+
+alert("Order submitted successfully!");
+
+cart = [];
+total = 0;
+renderCart();
+
+closeModal();
+
+}catch(error){
+
+alert("Failed to submit order.");
+
+}
+}
 </script>
 
 </body>
