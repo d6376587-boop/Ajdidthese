@@ -227,6 +227,15 @@ Premium Anime JA 3 & JA 4 Customs
 <div class="banner">
 🔥 ITACHI COLLECTION SALE • EVERYTHING $70 🔥
 </div>
+  <div id="sale-timer" style="
+font-size:2rem;
+color:#ffd700;
+margin-top:15px;
+font-weight:bold;
+text-shadow:0 0 10px gold;
+">
+🔥 128 HRS BEFORE 30% OFF DISCOUNT ENDS 🔥
+</div>
   <div class="stats">
 <div>🔥 Anime Customs</div>
 <div>🚚 Fast Shipping</div>
@@ -757,7 +766,23 @@ function closeModal(){
 document.getElementById("paymentModal")
 .style.display="none";
 }
+let timeLeft = 128 * 60 * 60;
 
+function updateTimer() {
+  const hours = Math.floor(timeLeft / 3600);
+  const minutes = Math.floor((timeLeft % 3600) / 60);
+  const seconds = timeLeft % 60;
+
+  document.getElementById("sale-timer").innerHTML =
+    `🔥 ${hours}H ${String(minutes).padStart(2,'0')}M ${String(seconds).padStart(2,'0')}S BEFORE 30% OFF DISCOUNT ENDS 🔥`;
+
+  if (timeLeft > 0) {
+    timeLeft--;
+  }
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
 window.onclick=function(event){
 
 const modal =
