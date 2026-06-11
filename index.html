@@ -1004,7 +1004,11 @@ headers:{
 body:JSON.stringify(payload)
 });
 
-alert("Order submitted successfully!");
+alert(
+"Thank you for your order!\n\n" +
+"Order Number: #" + orderNumber +
+"\n\nOnce payment is verified, your order will be processed."
+);
 
 cart = [];
 total = 0;
