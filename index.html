@@ -181,7 +181,27 @@ margin:15px 0;
 background:red;
 color:white;
 }
+.navbar{
+position:sticky;
+top:0;
+background:#111;
+padding:15px;
+display:flex;
+justify-content:center;
+gap:25px;
+border-bottom:2px solid red;
+z-index:1000;
+}
 
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.navbar a:hover{
+color:gold;
+}
 footer{
 text-align:center;
 padding:40px;
@@ -192,7 +212,12 @@ color:#888;
 </head>
 
 <body>
-
+<nav class="navbar">
+<a href="#naruto">Naruto</a>
+<a href="#onepiece">One Piece</a>
+<a href="#special">Special</a>
+<a href="#cart">Cart</a>
+</nav>
 <header>
 <h1>AJDidThese</h1>
 <p>Anime • Gaming • Community</p>
