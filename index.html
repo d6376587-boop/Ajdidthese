@@ -209,6 +209,33 @@ font-weight:bold;
 .navbar a:hover{
 color:gold;
 }
+  .collections{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:1200px;
+margin:40px auto;
+padding:20px;
+}
+
+.collection-card{
+background:#111;
+border:2px solid #7a3cff;
+border-radius:20px;
+padding:35px;
+text-align:center;
+text-decoration:none;
+color:white;
+font-size:1.3rem;
+font-weight:bold;
+box-shadow:0 0 15px rgba(122,60,255,.5);
+transition:.3s;
+}
+
+.collection-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px rgba(122,60,255,.9);
+}
 footer{
 text-align:center;
 padding:40px;
