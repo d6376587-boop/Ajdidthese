@@ -950,7 +950,8 @@ modal.style.display="none";
 }
 }
 async function sendOrder(){
-
+let orderNumber =
+Math.floor(Math.random() * 1001) + 2000;
 let orderText = "";
 
 cart.forEach(item=>{
