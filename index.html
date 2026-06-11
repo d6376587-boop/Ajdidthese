@@ -219,17 +219,27 @@ color:#888;
 <a href="#cart">Cart</a>
 </nav>
 <header>
-<h1>AJDidThese</h1>
-<p>Anime • Gaming • Community</p>
+<h1>AJDidThese Anime Customs</h1>
+
+<p>
+Premium Anime JA 3 & JA 4 Customs
+</p>
 <div class="banner">
 🔥 ITACHI COLLECTION SALE • EVERYTHING $70 🔥
+</div>
+  <div class="stats">
+<div>🔥 Anime Customs</div>
+<div>🚚 Fast Shipping</div>
+<div>💰 Secure Checkout</div>
 </div>
 </header>
 
 <div class="container">
 
 <div class="products">
-
+<h2 id="naruto" class="section-title">
+🔥 Naruto Collection
+</h2>
 <div class="product">
 
 <img src="itachi 4s.jpg"
@@ -371,7 +381,13 @@ Add To Cart
 </button>
 
 </div>
+</div>
 
+<h2 id="onepiece" class="section-title">
+🏴‍☠️ One Piece Collection
+</h2>
+
+<div class="products">
 <div class="product">
 
 <img src="kk.jpg"
@@ -399,7 +415,13 @@ Add To Cart
 </button>
 
 </div>
+</div>
 
+<h2 id="special" class="section-title">
+⚡ Special Editions
+</h2>
+
+<div class="products">
 <div class="product">
 
 <img src="gojo.jpg"
@@ -487,7 +509,10 @@ Add To Cart
 </div>
 
 <div class="cart">
-<h2>🛒 Shopping Cart</h2>
+<h2>
+🛒 Shopping Cart
+(<span id="cartCount">0</span>)
+</h2>
 
 <ul id="cartItems"></ul>
 
@@ -569,7 +594,8 @@ Remove
 `;
 
 });
-
+document.getElementById("cartCount").innerHTML =
+cart.length;
 document.getElementById("cartTotal")
 .innerHTML =
 "Total: $" + total;
