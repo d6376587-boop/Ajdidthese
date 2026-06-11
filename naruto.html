@@ -2,7 +2,22 @@
 <html>
 <head>
 <title>Naruto Collection</title>
+.naruto-corner{
+position:fixed;
+top:20px;
+right:20px;
+width:180px;
+z-index:100;
+pointer-events:none;
+filter:drop-shadow(0 0 15px orange);
+animation:float 3s ease-in-out infinite;
+}
 
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
 <style>
 body{
 background:linear-gradient(to bottom,#ff6a00,#cc0000,#050505);
@@ -53,7 +68,9 @@ font-weight:bold;
 </head>
 
 <body>
-
+<img src="nn.jpg"
+class="naruto-corner"
+alt="Naruto">
 <a href="index.html" class="back">
 ⬅ Back Home
 </a>
