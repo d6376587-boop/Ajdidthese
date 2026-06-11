@@ -807,7 +807,40 @@ If the Venmo QR doesn't work:
 <strong>@maybeajdiddoit</strong>
 </p>
 <h3 id="checkoutTotal"></h3>
+<h3>Shipping Information</h3>
 
+<input type="text" id="customerFirst"
+placeholder="First Name"
+style="width:100%;padding:10px;margin:5px 0;">
+
+<input type="text" id="customerLast"
+placeholder="Last Name"
+style="width:100%;padding:10px;margin:5px 0;">
+
+<input type="text" id="customerAddress"
+placeholder="Street Address"
+style="width:100%;padding:10px;margin:5px 0;">
+
+<input type="text" id="customerCity"
+placeholder="City"
+style="width:100%;padding:10px;margin:5px 0;">
+
+<input type="text" id="customerState"
+placeholder="State"
+style="width:100%;padding:10px;margin:5px 0;">
+
+<input type="text" id="customerZip"
+placeholder="ZIP Code"
+style="width:100%;padding:10px;margin:5px 0;">
+
+<input type="text" id="customerSize"
+placeholder="Shoe Size"
+style="width:100%;padding:10px;margin:5px 0;">
+
+<button class="checkout"
+onclick="sendOrder()">
+Submit Order
+</button>
 <button class="close" onclick="closeModal()">
 Close
 </button>
