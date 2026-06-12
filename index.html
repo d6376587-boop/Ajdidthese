@@ -191,18 +191,27 @@ top:0;
 background:#111;
 padding:15px;
 display:flex;
-justify-content:center;
-gap:25px;
+overflow-x:auto;
+white-space:nowrap;
+gap:15px;
 border-bottom:2px solid red;
 z-index:1000;
+scrollbar-width:none;
+-webkit-overflow-scrolling:touch;
+}
+
+.navbar::-webkit-scrollbar{
+display:none;
 }
 
 .navbar a{
+flex:0 0 auto;
 color:white;
 text-decoration:none;
 font-weight:bold;
+padding:8px 14px;
+border-radius:10px;
 }
-
 .navbar a:hover{
 color:gold;
 }
