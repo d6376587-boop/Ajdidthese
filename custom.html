@@ -125,6 +125,33 @@ Submit Design Request
 
 </div>
 
+<script>
+
+async function sendCustomRequest(){
+
+const payload = {
+content: "New custom design request submitted."
+};
+
+await fetch("https://discord.com/api/webhooks/1514718583001714800/s5ngxaG0QcJG0HijXtUkIf6rVpqHNLq066_JgXymQBDcRkt7CzPTh1AyprueqcX15AnB",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify(payload)
+});
+
+alert("Request submitted!");
+
+}
+
+document.querySelector("form").addEventListener("submit", function(e){
+e.preventDefault();
+sendCustomRequest();
+});
+
+</script>
+
 </body>
 </html>
 <label>Deadline / Urgency</label>
