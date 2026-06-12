@@ -73,7 +73,20 @@ border-radius:10px;
 margin-top:10px;
 cursor:pointer;
 }
-  <style>
+  .toast{
+position:fixed;
+top:20px;
+right:20px;
+background:#95ef63;
+color:black;
+padding:15px 25px;
+border-radius:12px;
+font-weight:bold;
+display:none;
+z-index:9999;
+box-shadow:0 4px 15px rgba(0,0,0,.3);
+}
+  </style>
 body{
 background:#0a0a0a;
 color:white;
@@ -137,6 +150,9 @@ font-weight:bold;
 cursor:pointer;
 }
 </style>
+  <div id="toast" class="toast">
+✅ Added To Cart
+</div>
 </head>
 <body>
 
@@ -315,6 +331,15 @@ cart.push({name,price});
 total += price;
 
 renderCart();
+
+const toast =
+document.getElementById("toast");
+
+toast.style.display = "block";
+
+setTimeout(() => {
+toast.style.display = "none";
+}, 2000);
 }
 
 function renderCart(){
